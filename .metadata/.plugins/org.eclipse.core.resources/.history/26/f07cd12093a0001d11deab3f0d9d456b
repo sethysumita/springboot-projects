@@ -1,0 +1,5 @@
+package spring.websocket.api.dto;
+
+public class Message {
+
+}

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html xmlns:th="https://thymeleaf.org">
+<head>
+<script src="/webjars/jquery/jquery.min.js"></script>
+<script src="/webjars/sockjs-client/sockjs.min.js"></script>
+<script src="/webjars/stomp-websocket/stomp.min.js"></script>
+<script src="/emp.js"></script>
+<meta charset="ISO-8859-1">
+<title>employee page</title>
+</head>
+<body>
+	<form>
+		<table>
+
+			<tr>
+				<td><label for="name">senderId</label></td>
+				<td><input type="text" name="senderId" id="senderId" required></input></td>
+			</tr>
+
+            <tr>
+				<td><label for="name">receiverId</label></td>
+				<td><input type="text" name="receiverId" id="receiverId" required></input></td>
+			</tr> 
+              
+              
+			<tr>
+				<td><label for="content">content</label></td>
+				<td><input type="text" name="content" id="content" required></input></td>
+			</tr>
+
+			<tr>
+				<td></td>
+				<td><input type="submit" id="send" value="Submit"></input></td>
+			</tr>
+		</table>
+       <div style="width:300px;height:200px; background-color:pink;">
+		<div class="row">
+			<div class="col-md-12">
+			
+				<table id="conversation" class="table table-striped">
+					<thead>
+						<tr>
+							<th>Greetings</th>
+						</tr>
+					</thead>
+					<tbody id="greetings">
+					</tbody>
+				</table>
+			</div>
+		</div>
+		</div>
+	</form>
+</body>
+</html>

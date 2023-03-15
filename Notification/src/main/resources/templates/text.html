@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<script 
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+
+<body>
+
+<script type="text/javascript">
+
+
+var stompClient = null;
+
+var socket = new SockJS('/ws');
+stompClient = Stomp.over(socket);
+stompClient.connect({}, function(frame) {
+    console.log(frame);
+    stompClient.subscribe('/all/messages', function(result) {
+        show(JSON.parse(result.body));
+    });
+});
+function sendMessage() {
+	  var text = document.getElementById('text').value
+	  stompClient.send('/app/application', {}, JSON.stringify({ from: from, text: text }))
+	}
+
+
+
+
+
+
+</script>
+
+
+
+</body>
+
+
+
+</html>

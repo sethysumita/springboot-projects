@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;WebSocketConfig.java&apos; to &apos;WebSocketHrEmp/src/main/java/com.example.demo.config&apos;&#x0D;&#x0A;- Original project: &apos;Leave-Management-App-By-using-Websocket-main&apos;&#x0D;&#x0A;- Destination element: &apos;WebSocketHrEmp/src/main/java/com.example.demo.config&apos;&#x0D;&#x0A;- Original element: &apos;com.example.config.WebSocketConfig.java&apos;" description="Copy compilation unit" destination="=WebSocketHrEmp/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.example.demo.config" element1="/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.example.config{WebSocketConfig.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1659937684361" units="1" version="1.0"/>
+</session>

@@ -1,0 +1,5 @@
+package spring.websocket.api.cofig;
+
+public class WebSocketConfig {
+
+}

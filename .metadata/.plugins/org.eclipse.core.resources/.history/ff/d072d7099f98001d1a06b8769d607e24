@@ -1,0 +1,68 @@
+var stompClient = null;
+
+function setConnected(connected) {
+	$("#connect").prop("disabled", connected);
+	$("#disconnect").prop("disabled", !connected);
+	if (connected) {
+		$("#conversation").show();
+	}
+	else {
+		$("#conversation").hide();
+	}
+	$("#greetings").html("");
+}
+
+function connect() {
+	var socket = new SockJS('/gs-guide-websocket');
+	stompClient = Stomp.over(socket);
+	stompClient.connect({}, function(frame) {
+		setConnected(true);
+		console.log('Connected: ' + frame);
+		stompClient.subscribe('/message/display', function(details) {
+			console.log("===========" + details.body);
+			displayThought(details.body);
+
+
+		});
+		stompClient.subscribe('/message/greetings', function(greeting) {
+			console.log("===========" + greeting.body);
+			showGreeting(JSON.parse(greeting.body));
+
+		});
+	});
+}
+
+function disconnect() {
+	if (stompClient !== null) {
+		stompClient.disconnect();
+	}
+	setConnected(false);
+	console.log("Disconnected");
+}
+
+function showGreeting(message) {
+
+	$("#greetings").append(message.content + " " + message.announcementDate + '<br>');
+
+}
+function displayThought(details) {
+
+
+	const obj = JSON.parse(details);
+	document.getElementById("thought").innerText = obj.thought.content;
+
+	obj.birthday.forEach((element) => {
+		$("#birthday").append("<p><strong>" + element.name + "  " + "</strong>" +
+			"<img width=\"50\" height=\"50\" src=\"data:image/jpeg;base64," + element.image + "\">" + "</img>" + "</p>");
+	})
+}
+
+
+$(document).ready(function() {
+	connect();
+
+
+	$("#disconnect").click(function() { disconnect(); });
+});
+
+

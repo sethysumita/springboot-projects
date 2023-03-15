@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>notification</title>
+<link rel="stylesheet"
+	href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.6.1/css/bootstrap.min.css"
+	integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+	crossorigin="anonymous">
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+	rel="stylesheet">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js">
+</script>
+</head> 
+<link rel="stylesheet" href="/css/.css">
+<body>l
+<div class="notification">
+				<div class="notBtn">
+					<div class="number">2</div>
+					<i class="fa fa-bell"></i>
+					<div class="box">
+						<div class="display">
+							<div class="nothing">
+								<div class="cent">You have a new message</div>
+							</div>
+						</div>
+
+					</div>
+				</div>
+			</div>
+
+<form th:action="@{/save}" th:object="${notification}" method="post">
+  <label for=" message"> message:</label><br>
+  <input type="text" id="message" name="message" ><br><br>
+  <input type="submit" value="Submit">
+  </form>
+ 
+</body>
+</html>

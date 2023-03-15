@@ -1,0 +1,5 @@
+package spring.websocket.api.config;
+
+public class WebSocketConfig {
+
+}

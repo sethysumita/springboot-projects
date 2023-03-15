@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>ListTrain</title>
+</head>
+<body>
+    <table>
+       <thead>
+              <tr>
+               <th>trainId</th>
+              <th>trainName</th>
+              <th>seats</th>
+              <th>edit</th>
+        </tr>
+</thead>
+
+      <tbody>
+             <tr th:each="train : ${trains}">
+                    <td th:text="${train.trainId}"></td>
+                    <td th:text="${train.trainName}"></td>
+                    <td th:text="${train.seats}"></td>
+                    <td><a th:href ="@{'/update/'+ ${train.trainId}}" class=" btnbtn-primary">UPDATE</a></td>
+                    <td><a th:href="@{'/delete/'+ ${train.trainId}}" class="btn btn-danger">DELETE</a></td>
+                </tr>
+           </tbody>
+      </table>
+</body>
+</html>

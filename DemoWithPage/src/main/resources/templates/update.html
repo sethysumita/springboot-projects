@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+
+<title>update</title>
+</head>
+<body>
+<form th:action="@{/save}" th:object="${trainobj}" method="post">
+ <input type="text"  th:field="*{trainId}"  readonly/>
+
+<label for="trainName">trainName:</label><br>
+  <input type="text" th:field="*{trainName}" id="trainName"  name="trainName" ><br>
+  <label for="seats">seats:</label><br>
+  <input type="number" th:field="*{seats}" id="seats" name="seats" >
+  <input type="submit" value="Update">
+   </form>
+   <a th:href = "@{/}"> Back to Employee List</a>
+</body>
+</html>

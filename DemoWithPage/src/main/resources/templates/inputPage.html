@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+
+<title>InputPage</title>
+</head>
+<body>
+<form th:action="@{/save}" th:object="${train}" method="post" >
+ 
+  <label for="trainName">trainName:</label><br>
+  <input type="text" id="trainName" name="trainName"><br>
+  <label for="seats">seats:</label><br>
+  <input type="number" id="seats" name="seats">
+   <input type="submit" value="Submit">
+</form>
+</body>
+</html>
